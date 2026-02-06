@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grupo Tapatio Folklore | Heritage & Fun</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --emerald-green: #004d33;   
+            --champagne-gold: #efbf5f; 
+            --slate-silver: #f8f9fa;   
+            --deep-slate: #2c3e50;     
+            --white: #ffffff;
+            --rounded: 25px; 
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            color: var(--deep-slate);
+            background: white;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER */
+        header {
+            background: rgba(0, 77, 51, 0.95);
+            padding: 1rem 5%;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            border-bottom: 3px solid var(--champagne-gold);
+            z-index: 1000;
+        }
+
+        .logo-container img { height: 70px; border-radius: 15px; }
+
+        .site-title {
+            text-align: center;
+            color: var(--champagne-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav ul { 
+            list-style: none; 
+            display: flex; 
+            gap: 30px; 
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 0.8rem; 
+            letter-spacing: 1.5px; 
+        }
+
+        nav a:hover { color: var(--champagne-gold); }
+
+        /* HERO */
+        .hero {
+            height: 70vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: black;
+            text-align: center;
+        }
+
+        .hero-video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+
+        .hero-content { position: relative; color: white; }
+        .hero h1 { font-family: 'Playfair Display'; color: var(--champagne-gold); font-size: 4.5rem; }
+
+        .section-padding { padding: 80px 10%; }
+        h2 { font-family: 'Playfair Display'; color: var(--emerald-green); font-size: 2.8rem; }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: var(--rounded);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .card:hover { transform: scale(1.05); border: 2px solid var(--champagne-gold); }
+
+        .btn {
+            background: var(--emerald-green);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .btn:hover { background: var(--champagne-gold); color: var(--emerald-green); }
+
+        .services-bg { background: var(--slate-silver); }
+
+        .gallery-img, .team-img, .art-video {
+            width: 100%;
+            border-radius: var(--rounded);
+            border: 4px solid var(--champagne-gold);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        /* HERITAGE FLEX */
+        .heritage-flex {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .heritage-text, .heritage-video {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            padding: 60px 10%;
+            border-radius: 50px 50px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+            gap: 40px;
+        }
+
+        .footer-grid h4 { color: var(--champagne-gold); }
+
+        @media (max-width:768px){
+            .hero h1{font-size:3rem;}
+            .heritage-flex { flex-direction: column; }
+            .site-title { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <!-- LOGO -->
+    <div class="logo-container">
+        <img src="Logo Tapatio.jpg" alt="Logo" loading="lazy">
+    </div>
+
+    <!-- CENTER TITLE -->
+    <div class="site-title">
+        Grupo Tapatio Folklore
+    </div>
+
+    <!-- NAV -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="Sequence 01.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+        <h1>Tradition in Motion</h1>
+        <p style="letter-spacing:5px;">EXPERIENCE THE ENERGY</p>
+    </div>
+</section>
+
+<!-- OUR HERITAGE -->
+<section id="about" class="section-padding">
+    <div class="heritage-flex">
+        
+        <div class="heritage-text">
+            <h2>Our Heritage</h2>
+            <p>
+                We bring the soul of Mexico to the stage through disciplined movement and vibrant storytelling. 
+                Serving San Diego County and surrounding areas with authentic Folklórico performances.
+                Our work blends tradition with modern artistry to create powerful, emotional experiences.
+            </p>
+            <a href="#contact" class="btn">Book a Performance</a>
+        </div>
+
+        <div class="heritage-video">
+            <video class="art-video" controls poster="heritage-poster.jpg">
+                <source src="heritage-art-film.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section-padding services-bg">
+    <h2 style="text-align:center;">Gallery</h2>
+    <div class="grid-container">
+        <img src="gallery1.jpg" class="gallery-img" loading="lazy">
+        <img src="gallery2.jpg" class="gallery-img" loading="lazy">
+        <img src="gallery3.jpg" class="gallery-img" loading="lazy">
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section-padding">
+    <h2 style="text-align:center;">What People Say</h2>
+    <div class="grid-container">
+        <div class="card">
+            <p>"Absolutely stunning performance! Our crowd loved every minute."</p>
+            <strong>- City Festival Organizer</strong>
+        </div>
+        <div class="card">
+            <p>"Professional, energetic, and beautiful costumes. Highly recommend!"</p>
+            <strong>- Wedding Client</strong>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="section-padding services-bg">
+    <h2 style="text-align:center;">Meet the Team</h2>
+    <div class="grid-container">
+        <div class="card">
+            <img src="director.jpg" class="team-img" loading="lazy">
+            <h3>Artistic Director</h3>
+            <p>Maria Gonzalez</p>
+        </div>
+        <div class="card">
+            <img src="instructor.jpg" class="team-img" loading="lazy">
+            <h3>Lead Instructor</h3>
+            <p>Carlos Ramirez</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h4>The Company</h4>
+            <p>Preserving Mexican history through world-class Folklórico performance.</p>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <p>info@folklorico.com<br>(555) 123-4567</p>
+        </div>
+        <div>
+            <h4>Follow Us</h4>
+            <p>
+                <a href="#" style="color:white;">Instagram</a> | 
+                <a href="#" style="color:white;">Facebook</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
