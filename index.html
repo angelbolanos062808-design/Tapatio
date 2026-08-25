@@ -11,14 +11,17 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
+    <!-- Navigation & Footer CSS -->
+    <link rel="stylesheet" href="nav-footer.css">
+
     <style>
         :root {
-            --emerald-green: #004d33;   
-            --champagne-gold: #efbf5f; 
-            --slate-silver: #f8f9fa;   
-            --deep-slate: #2c3e50;     
+            --emerald-green: #004d33;
+            --champagne-gold: #efbf5f;
+            --slate-silver: #f8f9fa;
+            --deep-slate: #2c3e50;
             --white: #ffffff;
-            --rounded: 25px; 
+            --rounded: 25px;
         }
 
         body {
@@ -29,50 +32,10 @@
             scroll-behavior: smooth;
         }
 
-        /* HEADER */
-        header {
-            background: rgba(0, 77, 51, 0.95);
-            padding: 1rem 5%;
-            display: grid;
-            grid-template-columns: auto 1fr auto;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            border-bottom: 3px solid var(--champagne-gold);
-            z-index: 1000;
-        }
+        /* =========================
+           HERO
+           ========================= */
 
-        .logo-container img { height: 70px; border-radius: 15px; }
-
-        .site-title {
-            text-align: center;
-            color: var(--champagne-gold);
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        nav ul { 
-            list-style: none; 
-            display: flex; 
-            gap: 30px; 
-            margin: 0;
-            padding: 0;
-        }
-
-        nav a { 
-            color: white; 
-            text-decoration: none; 
-            font-weight: 700; 
-            font-size: 0.8rem; 
-            letter-spacing: 1.5px; 
-        }
-
-        nav a:hover { color: var(--champagne-gold); }
-
-        /* HERO */
         .hero {
             height: 70vh;
             position: relative;
@@ -91,29 +54,59 @@
             opacity: 0.6;
         }
 
-        .hero-content { position: relative; color: white; }
-        .hero h1 { font-family: 'Playfair Display'; color: var(--champagne-gold); font-size: 4.5rem; }
+        .hero-content {
+            position: relative;
+            color: white;
+        }
 
-        .section-padding { padding: 80px 10%; }
-        h2 { font-family: 'Playfair Display'; color: var(--emerald-green); font-size: 2.8rem; }
+        .hero h1 {
+            font-family: 'Playfair Display';
+            color: var(--champagne-gold);
+            font-size: 4.5rem;
+        }
+
+        /* =========================
+           SECTIONS
+           ========================= */
+
+        .section-padding {
+            padding: 80px 10%;
+        }
+
+        h2 {
+            font-family: 'Playfair Display';
+            color: var(--emerald-green);
+            font-size: 2.8rem;
+        }
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
+
+        /* =========================
+           CARDS
+           ========================= */
 
         .card {
             background: white;
             padding: 35px;
             border-radius: var(--rounded);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
             transition: 0.3s;
             text-align: center;
         }
 
-        .card:hover { transform: scale(1.05); border: 2px solid var(--champagne-gold); }
+        .card:hover {
+            transform: scale(1.05);
+            border: 2px solid var(--champagne-gold);
+        }
+
+        /* =========================
+           BUTTON
+           ========================= */
 
         .btn {
             background: var(--emerald-green);
@@ -126,18 +119,36 @@
             margin-top: 15px;
         }
 
-        .btn:hover { background: var(--champagne-gold); color: var(--emerald-green); }
+        .btn:hover {
+            background: var(--champagne-gold);
+            color: var(--emerald-green);
+        }
 
-        .services-bg { background: var(--slate-silver); }
+        /* =========================
+           BACKGROUND
+           ========================= */
 
-        .gallery-img, .team-img, .art-video {
+        .services-bg {
+            background: var(--slate-silver);
+        }
+
+        /* =========================
+           IMAGES & VIDEOS
+           ========================= */
+
+        .gallery-img,
+        .team-img,
+        .art-video {
             width: 100%;
             border-radius: var(--rounded);
             border: 4px solid var(--champagne-gold);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
-        /* HERITAGE FLEX */
+        /* =========================
+           HERITAGE
+           ========================= */
+
         .heritage-flex {
             display: flex;
             gap: 50px;
@@ -145,154 +156,321 @@
             flex-wrap: wrap;
         }
 
-        .heritage-text, .heritage-video {
+        .heritage-text,
+        .heritage-video {
             flex: 1;
             min-width: 280px;
         }
 
-        footer {
-            background: #111;
-            color: white;
-            padding: 60px 10%;
-            border-radius: 50px 50px 0 0;
-        }
+        /* =========================
+           MOBILE
+           ========================= */
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-            gap: 40px;
-        }
+        @media (max-width: 768px) {
 
-        .footer-grid h4 { color: var(--champagne-gold); }
+            .hero h1 {
+                font-size: 3rem;
+            }
 
-        @media (max-width:768px){
-            .hero h1{font-size:3rem;}
-            .heritage-flex { flex-direction: column; }
-            .site-title { font-size: 1.2rem; }
+            .heritage-flex {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <!-- LOGO -->
-    <div class="logo-container">
-        <img src="Logo Tapatio.jpg" alt="Logo" loading="lazy">
-    </div>
+    <!-- =========================
+         NAVIGATION
+         Controlled by nav-footer.css
+         ========================= -->
 
-    <!-- CENTER TITLE -->
-    <div class="site-title">
-        Grupo Tapatio Folklore
-    </div>
+    <header>
 
-    <!-- NAV -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+        <div class="logo-container">
+            <img src="Logo Tapatio.jpg" alt="Grupo Tapatio Logo">
+        </div>
 
-<section id="home" class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-        <source src="Sequence 01.mp4" type="video/mp4">
-    </video>
-    <div class="hero-content">
-        <h1>Tradition in Motion</h1>
-        <p style="letter-spacing:5px;">EXPERIENCE THE ENERGY</p>
-    </div>
-</section>
+        <div class="site-title">
+            Grupo Tapatio Folklore
+        </div>
 
-<!-- OUR HERITAGE -->
-<section id="about" class="section-padding">
-    <div class="heritage-flex">
-        
-        <div class="heritage-text">
-            <h2>Our Heritage</h2>
-            <p>
-                We bring the soul of Mexico to the stage through disciplined movement and vibrant storytelling. 
-                Serving San Diego County and surrounding areas with authentic Folklórico performances.
-                Our work blends tradition with modern artistry to create powerful, emotional experiences.
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+         ========================= -->
+
+    <section class="hero">
+
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="Sequence 01.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-content">
+
+            <h1>Tradition in Motion</h1>
+
+            <p style="letter-spacing: 5px;">
+                EXPERIENCE THE ENERGY
             </p>
-            <a href="#contact" class="btn">Book a Performance</a>
+
         </div>
 
-        <div class="heritage-video">
-            <video class="art-video" controls poster="heritage-poster.jpg">
-                <source src="heritage-art-film.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    </section>
+
+
+    <!-- =========================
+         OUR HERITAGE
+         ========================= -->
+
+    <section class="section-padding">
+
+        <div class="heritage-flex">
+
+            <div class="heritage-text">
+
+                <h2>Our Heritage</h2>
+
+                <p>
+                    We bring the soul of Mexico to the stage through
+                    disciplined movement and vibrant storytelling.
+                    Serving San Diego County and surrounding areas
+                    with authentic Folklórico performances.
+                    Our work blends tradition with modern artistry
+                    to create powerful, emotional experiences.
+                </p>
+
+                <a href="contact.html" class="btn">
+                    Book a Performance
+                </a>
+
+            </div>
+
+
+            <div class="heritage-video">
+
+                <video
+                    class="art-video"
+                    controls
+                    poster="heritage-poster.jpg">
+
+                    <source
+                        src="heritage-art-film.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support the video tag.
+
+                </video>
+
+            </div>
+
         </div>
 
-    </div>
-</section>
+    </section>
 
-<!-- GALLERY -->
-<section id="gallery" class="section-padding services-bg">
-    <h2 style="text-align:center;">Gallery</h2>
-    <div class="grid-container">
-        <img src="gallery1.jpg" class="gallery-img" loading="lazy">
-        <img src="gallery2.jpg" class="gallery-img" loading="lazy">
-        <img src="gallery3.jpg" class="gallery-img" loading="lazy">
-    </div>
-</section>
 
-<!-- TESTIMONIALS -->
-<section class="section-padding">
-    <h2 style="text-align:center;">What People Say</h2>
-    <div class="grid-container">
-        <div class="card">
-            <p>"Absolutely stunning performance! Our crowd loved every minute."</p>
-            <strong>- City Festival Organizer</strong>
-        </div>
-        <div class="card">
-            <p>"Professional, energetic, and beautiful costumes. Highly recommend!"</p>
-            <strong>- Wedding Client</strong>
-        </div>
-    </div>
-</section>
+    <!-- =========================
+         GALLERY PREVIEW
+         ========================= -->
 
-<!-- TEAM -->
-<section id="team" class="section-padding services-bg">
-    <h2 style="text-align:center;">Meet the Team</h2>
-    <div class="grid-container">
-        <div class="card">
-            <img src="director.jpg" class="team-img" loading="lazy">
-            <h3>Artistic Director</h3>
-            <p>Maria Gonzalez</p>
-        </div>
-        <div class="card">
-            <img src="instructor.jpg" class="team-img" loading="lazy">
-            <h3>Lead Instructor</h3>
-            <p>Carlos Ramirez</p>
-        </div>
-    </div>
-</section>
+    <section class="section-padding services-bg">
 
-<footer>
-    <div class="footer-grid">
-        <div>
-            <h4>The Company</h4>
-            <p>Preserving Mexican history through world-class Folklórico performance.</p>
+        <h2 style="text-align: center;">
+            Gallery
+        </h2>
+
+        <div class="grid-container">
+
+            <img
+                src="gallery1.jpg"
+                class="gallery-img"
+                loading="lazy"
+                alt="Grupo Tapatio Folklorico performance">
+
+            <img
+                src="gallery2.jpg"
+                class="gallery-img"
+                loading="lazy"
+                alt="Grupo Tapatio dancers">
+
+            <img
+                src="gallery3.jpg"
+                class="gallery-img"
+                loading="lazy"
+                alt="Grupo Tapatio Folklorico">
+
         </div>
-        <div>
-            <h4>Contact</h4>
-            <p>info@folklorico.com<br>(555) 123-4567</p>
+
+    </section>
+
+
+    <!-- =========================
+         TESTIMONIALS
+         ========================= -->
+
+    <section class="section-padding">
+
+        <h2 style="text-align: center;">
+            What People Say
+        </h2>
+
+        <div class="grid-container">
+
+            <div class="card">
+
+                <p>
+                    "Absolutely stunning performance!
+                    Our crowd loved every minute."
+                </p>
+
+                <strong>
+                    - City Festival Organizer
+                </strong>
+
+            </div>
+
+
+            <div class="card">
+
+                <p>
+                    "Professional, energetic, and beautiful
+                    costumes. Highly recommend!"
+                </p>
+
+                <strong>
+                    - Wedding Client
+                </strong>
+
+            </div>
+
         </div>
-        <div>
-            <h4>Follow Us</h4>
-            <p>
-                <a href="#" style="color:white;">Instagram</a> | 
-                <a href="#" style="color:white;">Facebook</a>
-            </p>
+
+    </section>
+
+
+    <!-- =========================
+         TEAM PREVIEW
+         ========================= -->
+
+    <section class="section-padding services-bg">
+
+        <h2 style="text-align: center;">
+            Meet the Team
+        </h2>
+
+        <div class="grid-container">
+
+            <div class="card">
+
+                <img
+                    src="director.jpg"
+                    class="team-img"
+                    loading="lazy"
+                    alt="Artistic Director">
+
+                <h3>
+                    Artistic Director
+                </h3>
+
+                <p>
+                    Maria Gonzalez
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <img
+                    src="instructor.jpg"
+                    class="team-img"
+                    loading="lazy"
+                    alt="Lead Instructor">
+
+                <h3>
+                    Lead Instructor
+                </h3>
+
+                <p>
+                    Carlos Ramirez
+                </p>
+
+            </div>
+
         </div>
-    </div>
-</footer>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+         Controlled by nav-footer.css
+         ========================= -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h4>The Company</h4>
+
+                <p>
+                    Preserving Mexican history through
+                    world-class Folklórico performance.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>Contact</h4>
+
+                <p>
+                    info@folklorico.com<br>
+                    (555) 123-4567
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>Follow Us</h4>
+
+                <p>
+
+                    <a href="#">
+                        Instagram
+                    </a>
+
+                    |
+
+                    <a href="#">
+                        Facebook
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
 
 </body>
 </html>
