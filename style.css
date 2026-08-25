@@ -1,55 +1,70 @@
 @charset "UTF-8";
 
-/* =========================
-   GRUPO TAPATIO
-   NAVIGATION + FOOTER
-   ========================= */
+/* =====================================================
+   GRUPO TAPATIO FOLKLORE
+   NAVIGATION BAR + FOOTER
+   ===================================================== */
 
 :root {
     --emerald-green: #004d33;
     --champagne-gold: #efbf5f;
     --white: #ffffff;
-    --deep-slate: #2c3e50;
+    --light-cream: #f8f9fa;
+    --dark-green: #003d29;
 }
 
 
-/* =========================
+/* =====================================================
    NAVIGATION BAR
-   ========================= */
+   ===================================================== */
 
 header {
-    background: rgba(0, 77, 51, 0.95);
-    padding: 1rem 5%;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--emerald-green);
+    padding: 12px 5%;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--champagne-gold);
     position: sticky;
     top: 0;
-    border-bottom: 3px solid var(--champagne-gold);
     z-index: 1000;
 }
 
-.logo-container img {
-    height: 70px;
-    width: auto;
-    border-radius: 15px;
-    display: block;
+
+/* LOGO - FAR LEFT */
+
+.logo-container {
+    display: flex;
+    align-items: center;
 }
 
-.site-title {
-    text-align: center;
-    color: var(--champagne-gold);
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+.logo-container img {
+    height: 65px;
+    width: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+
+/* NAVIGATION - FAR RIGHT */
+
+nav {
+    display: flex;
+    align-items: center;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
     margin: 0;
     padding: 0;
 }
@@ -58,49 +73,89 @@ nav a {
     color: var(--white);
     text-decoration: none;
     font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
     font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 1.5px;
-    transition: 0.3s ease;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+
+/* GOLD LINE UNDER NAVIGATION */
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--champagne-gold);
+    transition: width 0.3s ease;
 }
 
 nav a:hover {
     color: var(--champagne-gold);
 }
 
+nav a:hover::after {
+    width: 100%;
+}
 
-/* =========================
+
+/* =====================================================
    FOOTER
-   ========================= */
+   ===================================================== */
 
 footer {
-    background: #111;
+    background: var(--emerald-green);
     color: var(--white);
-    padding: 60px 10%;
-    border-radius: 50px 50px 0 0;
+    padding: 60px 8% 30px;
+    border-top: 3px solid var(--champagne-gold);
 }
 
+
+/* FOOTER COLUMNS */
+
 .footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
 }
+
+
+/* FOOTER HEADINGS */
 
 .footer-grid h4 {
     color: var(--champagne-gold);
     font-family: 'Playfair Display', serif;
-    margin-top: 0;
+    font-size: 1.3rem;
+    margin: 0 0 15px;
+    letter-spacing: 0.5px;
 }
 
+
+/* FOOTER TEXT */
+
 .footer-grid p {
-    color: #ddd;
+    color: var(--white);
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95rem;
     line-height: 1.7;
+    margin: 0;
 }
+
+
+/* FOOTER LINKS */
 
 .footer-grid a {
     color: var(--white);
     text-decoration: none;
-    transition: 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .footer-grid a:hover {
@@ -108,47 +163,58 @@ footer {
 }
 
 
-/* =========================
-   MOBILE
-   ========================= */
+/* GOLD LINE ABOVE BOTTOM */
+
+footer::after {
+    content: "";
+    display: block;
+    max-width: 1200px;
+    height: 1px;
+    background: rgba(239, 191, 95, 0.5);
+    margin: 40px auto 0;
+}
+
+
+/* =====================================================
+   MOBILE NAVIGATION
+   ===================================================== */
 
 @media (max-width: 768px) {
 
     header {
-        grid-template-columns: 1fr;
+        padding: 12px 5%;
+        flex-direction: column;
         gap: 15px;
-        text-align: center;
-    }
-
-    .logo-container {
-        display: flex;
-        justify-content: center;
     }
 
     .logo-container img {
         height: 60px;
     }
 
-    .site-title {
-        font-size: 1.2rem;
-    }
-
     nav ul {
-        justify-content: center;
+        gap: 18px;
         flex-wrap: wrap;
-        gap: 15px;
+        justify-content: center;
     }
 
     nav a {
         font-size: 0.75rem;
     }
 
+
+    /* MOBILE FOOTER */
+
     footer {
-        padding: 45px 8%;
-        border-radius: 35px 35px 0 0;
+        padding: 45px 8% 25px;
     }
 
     .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
         text-align: center;
+    }
+
+    footer::after {
+        margin-top: 30px;
     }
 }
