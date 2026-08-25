@@ -32,6 +32,7 @@
             scroll-behavior: smooth;
         }
 
+
         /* =========================
            HERO
            ========================= */
@@ -65,6 +66,7 @@
             font-size: 4.5rem;
         }
 
+
         /* =========================
            SECTIONS
            ========================= */
@@ -79,30 +81,31 @@
             font-size: 2.8rem;
         }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
 
         /* =========================
-           CARDS
+           OUR HERITAGE
            ========================= */
 
-        .card {
-            background: white;
-            padding: 35px;
-            border-radius: var(--rounded);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-            transition: 0.3s;
-            text-align: center;
+        .heritage-flex {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
-        .card:hover {
-            transform: scale(1.05);
-            border: 2px solid var(--champagne-gold);
+        .heritage-text,
+        .heritage-video {
+            flex: 1;
+            min-width: 280px;
         }
+
+        .art-video {
+            width: 100%;
+            border-radius: var(--rounded);
+            border: 4px solid var(--champagne-gold);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
 
         /* =========================
            BUTTON
@@ -124,43 +127,75 @@
             color: var(--emerald-green);
         }
 
+
         /* =========================
-           BACKGROUND
+           MEET OUR TEAM
            ========================= */
 
         .services-bg {
             background: var(--slate-silver);
         }
 
-        /* =========================
-           IMAGES & VIDEOS
-           ========================= */
+        .team-section-title {
+            text-align: center;
+        }
 
-        .gallery-img,
-        .team-img,
-        .art-video {
-            width: 100%;
+        .team-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-card {
+            background: white;
             border-radius: var(--rounded);
-            border: 4px solid var(--champagne-gold);
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
-        /* =========================
-           HERITAGE
-           ========================= */
-
-        .heritage-flex {
-            display: flex;
-            gap: 50px;
-            align-items: center;
-            flex-wrap: wrap;
+        .team-card-image {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
         }
 
-        .heritage-text,
-        .heritage-video {
-            flex: 1;
-            min-width: 280px;
+        .team-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
+
+        .team-card-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 77, 51, 0.90);
+            color: var(--champagne-gold);
+            padding: 15px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
+        }
+
+        .team-card-text {
+            padding: 20px 25px 25px;
+        }
+
+        .team-card-text p {
+            margin: 0;
+            line-height: 1.6;
+            color: var(--deep-slate);
+        }
+
 
         /* =========================
            MOBILE
@@ -175,15 +210,23 @@
             .heritage-flex {
                 flex-direction: column;
             }
+
+            .team-links {
+                grid-template-columns: 1fr;
+            }
+
+            .team-card-image {
+                height: 250px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+
     <!-- =========================
          NAVIGATION
-         Controlled by nav-footer.css
          ========================= -->
 
     <header>
@@ -283,132 +326,102 @@
 
 
     <!-- =========================
-         GALLERY PREVIEW
+         MEET OUR TEAM
          ========================= -->
 
     <section class="section-padding services-bg">
 
-        <h2 style="text-align: center;">
-            Gallery
+        <h2 class="team-section-title">
+            Meet Our Team
         </h2>
 
-        <div class="grid-container">
 
-            <img
-                src="gallery1.jpg"
-                class="gallery-img"
-                loading="lazy"
-                alt="Grupo Tapatio Folklorico performance">
-
-            <img
-                src="gallery2.jpg"
-                class="gallery-img"
-                loading="lazy"
-                alt="Grupo Tapatio dancers">
-
-            <img
-                src="gallery3.jpg"
-                class="gallery-img"
-                loading="lazy"
-                alt="Grupo Tapatio Folklorico">
-
-        </div>
-
-    </section>
+        <div class="team-links">
 
 
-    <!-- =========================
-         TESTIMONIALS
-         ========================= -->
+            <!-- ABOUT US -->
 
-    <section class="section-padding">
+            <a href="about.html" class="team-card">
 
-        <h2 style="text-align: center;">
-            What People Say
-        </h2>
+                <div class="team-card-image">
 
-        <div class="grid-container">
+                    <img
+                        src="gallery1.jpg"
+                        alt="Grupo Tapatio Folklore organization">
 
-            <div class="card">
+                    <div class="team-card-title">
+                        About Us
+                    </div>
 
-                <p>
-                    "Absolutely stunning performance!
-                    Our crowd loved every minute."
-                </p>
+                </div>
 
-                <strong>
-                    - City Festival Organizer
-                </strong>
+                <div class="team-card-text">
 
-            </div>
+                    <p>
+                        Meet our organization, our teachers,
+                        and learn more about what we do here.
+                    </p>
 
+                </div>
 
-            <div class="card">
-
-                <p>
-                    "Professional, energetic, and beautiful
-                    costumes. Highly recommend!"
-                </p>
-
-                <strong>
-                    - Wedding Client
-                </strong>
-
-            </div>
-
-        </div>
-
-    </section>
+            </a>
 
 
-    <!-- =========================
-         TEAM PREVIEW
-         ========================= -->
+            <!-- GALLERY -->
 
-    <section class="section-padding services-bg">
+            <a href="gallery.html" class="team-card">
 
-        <h2 style="text-align: center;">
-            Meet the Team
-        </h2>
+                <div class="team-card-image">
 
-        <div class="grid-container">
+                    <img
+                        src="gallery2.jpg"
+                        alt="Grupo Tapatio Folklore performance">
 
-            <div class="card">
+                    <div class="team-card-title">
+                        Gallery
+                    </div>
 
-                <img
-                    src="director.jpg"
-                    class="team-img"
-                    loading="lazy"
-                    alt="Artistic Director">
+                </div>
 
-                <h3>
-                    Artistic Director
-                </h3>
+                <div class="team-card-text">
 
-                <p>
-                    Maria Gonzalez
-                </p>
+                    <p>
+                        Check out our past performances
+                        and see the dances we have shared.
+                    </p>
 
-            </div>
+                </div>
+
+            </a>
 
 
-            <div class="card">
+            <!-- CONTACT -->
 
-                <img
-                    src="instructor.jpg"
-                    class="team-img"
-                    loading="lazy"
-                    alt="Lead Instructor">
+            <a href="contact.html" class="team-card">
 
-                <h3>
-                    Lead Instructor
-                </h3>
+                <div class="team-card-image">
 
-                <p>
-                    Carlos Ramirez
-                </p>
+                    <img
+                        src="gallery3.jpg"
+                        alt="Grupo Tapatio Folklore dancers">
 
-            </div>
+                    <div class="team-card-title">
+                        Contact
+                    </div>
+
+                </div>
+
+                <div class="team-card-text">
+
+                    <p>
+                        Join the experience and get in touch
+                        with Grupo Tapatio today.
+                    </p>
+
+                </div>
+
+            </a>
+
 
         </div>
 
@@ -417,7 +430,6 @@
 
     <!-- =========================
          FOOTER
-         Controlled by nav-footer.css
          ========================= -->
 
     <footer>
@@ -471,6 +483,7 @@
         </div>
 
     </footer>
+
 
 </body>
 </html>
