@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Grupo Tapatio Folklore | Heritage & Fun</title>
@@ -11,10 +12,13 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <!-- Navigation & Footer CSS -->
-    <link rel="stylesheet" href="nav-footer.css">
 
     <style>
+
+        /* =====================================================
+           GENERAL
+           ===================================================== */
+
         :root {
             --emerald-green: #004d33;
             --champagne-gold: #efbf5f;
@@ -24,18 +28,109 @@
             --rounded: 25px;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Lato', sans-serif;
             margin: 0;
             color: var(--deep-slate);
             background: white;
-            scroll-behavior: smooth;
         }
 
 
-        /* =========================
+        /* =====================================================
+           NAVIGATION BAR
+           ===================================================== */
+
+        header {
+            background: var(--emerald-green);
+            padding: 12px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid var(--champagne-gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+
+        /* LOGO */
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 65px;
+            width: auto;
+            border-radius: 12px;
+            display: block;
+        }
+
+
+        /* NAVIGATION */
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            padding: 10px 0;
+            position: relative;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--champagne-gold);
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--champagne-gold);
+            transition: 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =====================================================
            HERO
-           ========================= */
+           ===================================================== */
 
         .hero {
             height: 70vh;
@@ -45,6 +140,7 @@
             justify-content: center;
             background: black;
             text-align: center;
+            overflow: hidden;
         }
 
         .hero-video {
@@ -58,33 +154,39 @@
         .hero-content {
             position: relative;
             color: white;
+            z-index: 2;
         }
 
         .hero h1 {
-            font-family: 'Playfair Display';
+            font-family: 'Playfair Display', serif;
             color: var(--champagne-gold);
             font-size: 4.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            letter-spacing: 5px;
         }
 
 
-        /* =========================
-           SECTIONS
-           ========================= */
+        /* =====================================================
+           GENERAL SECTIONS
+           ===================================================== */
 
         .section-padding {
             padding: 80px 10%;
         }
 
         h2 {
-            font-family: 'Playfair Display';
+            font-family: 'Playfair Display', serif;
             color: var(--emerald-green);
             font-size: 2.8rem;
         }
 
 
-        /* =========================
+        /* =====================================================
            OUR HERITAGE
-           ========================= */
+           ===================================================== */
 
         .heritage-flex {
             display: flex;
@@ -103,13 +205,13 @@
             width: 100%;
             border-radius: var(--rounded);
             border: 4px solid var(--champagne-gold);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
 
 
-        /* =========================
+        /* =====================================================
            BUTTON
-           ========================= */
+           ===================================================== */
 
         .btn {
             background: var(--emerald-green);
@@ -120,6 +222,7 @@
             font-weight: 700;
             display: inline-block;
             margin-top: 15px;
+            transition: 0.3s ease;
         }
 
         .btn:hover {
@@ -128,9 +231,9 @@
         }
 
 
-        /* =========================
-           MEET OUR TEAM
-           ========================= */
+        /* =====================================================
+           MEET OUR TEAM / THREE CARDS
+           ===================================================== */
 
         .services-bg {
             background: var(--slate-silver);
@@ -151,14 +254,16 @@
             background: white;
             border-radius: var(--rounded);
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.10);
             text-align: center;
+            text-decoration: none;
+            color: var(--deep-slate);
             transition: 0.3s ease;
         }
 
         .team-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
 
         .team-card-image {
@@ -179,7 +284,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(0, 77, 51, 0.90);
+            background: rgba(0,77,51,0.90);
             color: var(--champagne-gold);
             padding: 15px;
             font-family: 'Playfair Display', serif;
@@ -193,15 +298,85 @@
         .team-card-text p {
             margin: 0;
             line-height: 1.6;
-            color: var(--deep-slate);
         }
 
 
-        /* =========================
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        footer {
+            background: var(--emerald-green);
+            color: white;
+            padding: 60px 8% 30px;
+            border-top: 3px solid var(--champagne-gold);
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+        }
+
+        .footer-grid h4 {
+            color: var(--champagne-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin: 0 0 15px;
+        }
+
+        .footer-grid p {
+            color: white;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .footer-grid a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .footer-grid a:hover {
+            color: var(--champagne-gold);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(239,191,95,0.5);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+
+        /* =====================================================
            MOBILE
-           ========================= */
+           ===================================================== */
 
         @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .logo-container img {
+                height: 60px;
+            }
+
+            nav ul {
+                gap: 18px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 0.75rem;
+            }
 
             .hero h1 {
                 font-size: 3rem;
@@ -215,58 +390,98 @@
                 grid-template-columns: 1fr;
             }
 
-            .team-card-image {
-                height: 250px;
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
             }
+
         }
+
     </style>
 </head>
+
 
 <body>
 
 
-    <!-- =========================
+    <!-- =====================================================
          NAVIGATION
-         ========================= -->
+         ===================================================== -->
 
     <header>
 
         <div class="logo-container">
-            <img src="Logo Tapatio.jpg" alt="Grupo Tapatio Logo">
+
+            <img
+                src="Logo Tapatio.jpg"
+                alt="Grupo Tapatio Folklore Logo">
+
         </div>
 
-        <div class="site-title">
-            Grupo Tapatio Folklore
-        </div>
 
         <nav>
+
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="contact.html">Contact</a></li>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
             </ul>
+
         </nav>
 
     </header>
 
 
-    <!-- =========================
+    <!-- =====================================================
          HERO
-         ========================= -->
+         ===================================================== -->
 
     <section class="hero">
 
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="Sequence 01.mp4" type="video/mp4">
+        <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline>
+
+            <source
+                src="Sequence 01.mp4"
+                type="video/mp4">
+
         </video>
+
 
         <div class="hero-content">
 
-            <h1>Tradition in Motion</h1>
+            <h1>
+                Tradition in Motion
+            </h1>
 
-            <p style="letter-spacing: 5px;">
+            <p>
                 EXPERIENCE THE ENERGY
             </p>
 
@@ -275,17 +490,20 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          OUR HERITAGE
-         ========================= -->
+         ===================================================== -->
 
     <section class="section-padding">
 
         <div class="heritage-flex">
 
+
             <div class="heritage-text">
 
-                <h2>Our Heritage</h2>
+                <h2>
+                    Our Heritage
+                </h2>
 
                 <p>
                     We bring the soul of Mexico to the stage through
@@ -296,8 +514,12 @@
                     to create powerful, emotional experiences.
                 </p>
 
-                <a href="contact.html" class="btn">
+                <a
+                    href="contact.html"
+                    class="btn">
+
                     Book a Performance
+
                 </a>
 
             </div>
@@ -320,14 +542,15 @@
 
             </div>
 
+
         </div>
 
     </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          MEET OUR TEAM
-         ========================= -->
+         ===================================================== -->
 
     <section class="section-padding services-bg">
 
@@ -341,13 +564,15 @@
 
             <!-- ABOUT US -->
 
-            <a href="about.html" class="team-card">
+            <a
+                href="about.html"
+                class="team-card">
 
                 <div class="team-card-image">
 
                     <img
                         src="gallery1.jpg"
-                        alt="Grupo Tapatio Folklore organization">
+                        alt="About Grupo Tapatio">
 
                     <div class="team-card-title">
                         About Us
@@ -369,13 +594,15 @@
 
             <!-- GALLERY -->
 
-            <a href="gallery.html" class="team-card">
+            <a
+                href="gallery.html"
+                class="team-card">
 
                 <div class="team-card-image">
 
                     <img
                         src="gallery2.jpg"
-                        alt="Grupo Tapatio Folklore performance">
+                        alt="Grupo Tapatio performance">
 
                     <div class="team-card-title">
                         Gallery
@@ -397,13 +624,15 @@
 
             <!-- CONTACT -->
 
-            <a href="contact.html" class="team-card">
+            <a
+                href="contact.html"
+                class="team-card">
 
                 <div class="team-card-image">
 
                     <img
                         src="gallery3.jpg"
-                        alt="Grupo Tapatio Folklore dancers">
+                        alt="Contact Grupo Tapatio">
 
                     <div class="team-card-title">
                         Contact
@@ -428,21 +657,25 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          FOOTER
-         ========================= -->
+         ===================================================== -->
 
     <footer>
 
         <div class="footer-grid">
 
+
             <div>
 
-                <h4>The Company</h4>
+                <h4>
+                    Grupo Tapatio Folklore
+                </h4>
 
                 <p>
-                    Preserving Mexican history through
-                    world-class Folklórico performance.
+                    Preserving Mexican heritage through
+                    authentic Folklórico dance, music,
+                    and storytelling.
                 </p>
 
             </div>
@@ -450,7 +683,9 @@
 
             <div>
 
-                <h4>Contact</h4>
+                <h4>
+                    Contact
+                </h4>
 
                 <p>
                     info@folklorico.com<br>
@@ -462,7 +697,9 @@
 
             <div>
 
-                <h4>Follow Us</h4>
+                <h4>
+                    Follow Us
+                </h4>
 
                 <p>
 
@@ -470,7 +707,7 @@
                         Instagram
                     </a>
 
-                    |
+                    &nbsp; | &nbsp;
 
                     <a href="#">
                         Facebook
@@ -479,6 +716,14 @@
                 </p>
 
             </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 Grupo Tapatio Folklore. All rights reserved.
 
         </div>
 
