@@ -28,7 +28,6 @@
             --slate-silver: #f8f9fa;
             --deep-slate: #2c3e50;
             --white: #ffffff;
-            --rounded: 25px;
         }
 
         * {
@@ -40,15 +39,15 @@
         }
 
         body {
-            font-family: 'Lato', sans-serif;
             margin: 0;
+            font-family: 'Lato', sans-serif;
             color: var(--deep-slate);
             background: white;
         }
 
 
         /* =====================================================
-           NAVIGATION
+           NAVIGATION BAR
            ===================================================== */
 
         header {
@@ -63,21 +62,11 @@
             z-index: 1000;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
         .logo-container img {
             height: 65px;
             width: auto;
-            border-radius: 12px;
             display: block;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
+            border-radius: 12px;
         }
 
         nav ul {
@@ -89,18 +78,12 @@
             padding: 0;
         }
 
-        nav li {
-            margin: 0;
-            padding: 0;
-        }
-
         nav a {
             color: white;
             text-decoration: none;
             font-weight: 700;
             font-size: 0.9rem;
             letter-spacing: 1px;
-            padding: 10px 0;
             position: relative;
             transition: 0.3s ease;
         }
@@ -113,7 +96,7 @@
             content: "";
             position: absolute;
             left: 0;
-            bottom: 0;
+            bottom: -7px;
             width: 0;
             height: 2px;
             background: var(--champagne-gold);
@@ -126,290 +109,157 @@
 
 
         /* =====================================================
-           GALLERY HERO
+           PAGE INTRO
            ===================================================== */
 
-        .gallery-hero {
-            min-height: 55vh;
-            background:
-                linear-gradient(
-                    rgba(0, 77, 51, 0.78),
-                    rgba(0, 0, 0, 0.70)
-                ),
-                url("gallery-hero.jpg");
-
-            background-size: cover;
-            background-position: center;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
+        .page-intro {
             text-align: center;
-            color: white;
-            padding: 60px 20px;
+            padding: 80px 20px 60px;
+            background: var(--slate-silver);
         }
 
-        .gallery-hero-content {
-            max-width: 850px;
-        }
-
-        .gallery-hero h1 {
-            font-family: 'Playfair Display', serif;
-            color: var(--champagne-gold);
-            font-size: 4.5rem;
-            margin: 0 0 20px;
-        }
-
-        .gallery-hero p {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            letter-spacing: 1px;
-            margin: 0;
-        }
-
-
-        /* =====================================================
-           INTRODUCTION
-           ===================================================== */
-
-        .gallery-intro {
-            padding: 80px 10% 50px;
-            text-align: center;
-        }
-
-        .gallery-intro h2 {
+        .page-intro h1 {
             font-family: 'Playfair Display', serif;
             color: var(--emerald-green);
-            font-size: 2.8rem;
-            margin-bottom: 15px;
+            font-size: 4rem;
+            margin: 0 0 15px;
         }
 
-        .gallery-intro p {
-            max-width: 750px;
-            margin: 0 auto;
-            line-height: 1.8;
-            font-size: 1rem;
+        .gold-line {
+            width: 70px;
+            height: 3px;
+            background: var(--champagne-gold);
+            margin: 20px auto;
         }
 
-
-        /* =====================================================
-           FEATURED PERFORMANCE
-           ===================================================== */
-
-        .featured-performance {
-            padding: 30px 10% 80px;
-        }
-
-        .featured-box {
-            position: relative;
-            max-width: 1200px;
+        .page-intro p {
+            max-width: 650px;
             margin: auto;
-            height: 550px;
-            overflow: hidden;
-            border-radius: 30px;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.18);
-        }
-
-        .featured-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.7s ease;
-        }
-
-        .featured-box:hover img {
-            transform: scale(1.05);
-        }
-
-        .featured-overlay {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-
-            padding: 100px 50px 45px;
-
-            background: linear-gradient(
-                transparent,
-                rgba(0,0,0,0.85)
-            );
-
-            color: white;
-        }
-
-        .featured-overlay span {
-            color: var(--champagne-gold);
-            font-weight: 700;
-            letter-spacing: 3px;
-            font-size: 0.8rem;
-        }
-
-        .featured-overlay h2 {
-            color: white;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin: 10px 0;
-        }
-
-        .featured-overlay p {
-            margin: 0;
-            line-height: 1.6;
+            line-height: 1.8;
+            font-size: 1.05rem;
         }
 
 
         /* =====================================================
-           PERFORMANCE GALLERY
+           PERFORMANCE MENU
            ===================================================== */
 
-        .performance-section {
-            background: var(--slate-silver);
+        .performance-menu {
             padding: 80px 10%;
         }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--emerald-green);
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            margin: auto;
-            max-width: 650px;
-            line-height: 1.7;
-        }
-
 
         /* =====================================================
-           PHOTO GRID
+           PERFORMANCE ROW
            ===================================================== */
 
-        .photo-grid {
-            max-width: 1200px;
-            margin: auto;
+        .performance {
+            max-width: 1100px;
+            margin: 0 auto 100px;
 
             display: grid;
+            grid-template-columns: 45% 1fr;
 
-            grid-template-columns:
-                repeat(3, 1fr);
+            gap: 70px;
 
-            gap: 25px;
+            align-items: center;
         }
 
 
-        /* PHOTO CARD */
+        /* VIDEO */
 
-        .photo-card {
-            position: relative;
-            height: 350px;
-            overflow: hidden;
-            border-radius: 22px;
-            background: #ddd;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-        }
-
-        .photo-card.large {
-            grid-row: span 2;
-            height: 725px;
-        }
-
-        .photo-card img {
+        .performance-video {
             width: 100%;
-            height: 100%;
+            height: 520px;
+
             object-fit: cover;
-            display: block;
 
-            transition:
-                transform 0.6s ease;
+            border-radius: 20px;
+
+            border: 4px solid var(--champagne-gold);
+
+            background: black;
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.15);
         }
 
-        .photo-card:hover img {
-            transform: scale(1.08);
+
+        /* TEXT */
+
+        .performance-info {
+            padding: 20px;
         }
 
-
-        /* PHOTO OVERLAY */
-
-        .photo-overlay {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-
-            padding: 70px 25px 25px;
-
-            background: linear-gradient(
-                transparent,
-                rgba(0,0,0,0.85)
-            );
-
-            color: white;
-
-            transform: translateY(5px);
-            transition: 0.3s ease;
-        }
-
-        .photo-card:hover .photo-overlay {
-            transform: translateY(0);
-        }
-
-        .photo-overlay span {
+        .performance-number {
             color: var(--champagne-gold);
-            font-size: 0.75rem;
             font-weight: 700;
-            letter-spacing: 2px;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
         }
 
-        .photo-overlay h3 {
+        .performance-info h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin: 7px 0 0;
+
+            color: var(--emerald-green);
+
+            font-size: 2.6rem;
+
+            margin: 10px 0 20px;
+        }
+
+        .performance-info p {
+            font-size: 1rem;
+            line-height: 1.8;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* SMALL INFORMATION */
+
+        .performance-details {
+            border-left: 3px solid var(--champagne-gold);
+
+            padding-left: 18px;
+
+            margin-top: 25px;
+        }
+
+        .performance-details strong {
+            color: var(--emerald-green);
         }
 
 
         /* =====================================================
-           EVENTS SECTION
+           ALTERNATING ROWS
            ===================================================== */
 
-        .events-section {
-            padding: 90px 10%;
-            text-align: center;
+        /* EVEN ROWS */
+
+        .performance:nth-child(even) {
+            grid-template-columns: 1fr 45%;
         }
 
-        .events-section h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--emerald-green);
-            font-size: 2.8rem;
+        .performance:nth-child(even) .performance-video {
+            grid-column: 2;
+            grid-row: 1;
         }
 
-        .events-section p {
-            max-width: 750px;
-            margin: auto;
-            line-height: 1.8;
+        .performance:nth-child(even) .performance-info {
+            grid-column: 1;
+            grid-row: 1;
         }
 
-        .event-tags {
-            margin-top: 35px;
 
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+        /* =====================================================
+           DIVIDER
+           ===================================================== */
 
-        .event-tag {
-            border: 2px solid var(--champagne-gold);
-            color: var(--emerald-green);
-            padding: 12px 22px;
-            border-radius: 50px;
-            font-weight: 700;
+        .performance:not(:last-child)::after {
+            content: "";
+
+            position: absolute;
         }
 
 
@@ -419,35 +269,47 @@
 
         .join-section {
             background: var(--emerald-green);
+
             color: white;
-            padding: 90px 10%;
+
             text-align: center;
+
+            padding: 90px 20px;
         }
 
         .join-section h2 {
-            color: var(--champagne-gold);
             font-family: 'Playfair Display', serif;
+
+            color: var(--champagne-gold);
+
             font-size: 3rem;
+
             margin-top: 0;
         }
 
         .join-section p {
-            max-width: 700px;
-            margin: 0 auto;
+            max-width: 650px;
+
+            margin: auto;
+
             line-height: 1.8;
         }
 
         .join-button {
             display: inline-block;
+
             margin-top: 30px;
 
+            padding: 15px 35px;
+
             background: var(--champagne-gold);
+
             color: var(--emerald-green);
 
-            padding: 15px 35px;
+            text-decoration: none;
+
             border-radius: 50px;
 
-            text-decoration: none;
             font-weight: 700;
 
             transition: 0.3s ease;
@@ -455,7 +317,6 @@
 
         .join-button:hover {
             background: white;
-            transform: translateY(-3px);
         }
 
 
@@ -465,37 +326,48 @@
 
         footer {
             background: var(--emerald-green);
+
             color: white;
+
             padding: 60px 8% 30px;
+
             border-top: 3px solid var(--champagne-gold);
         }
 
         .footer-grid {
             max-width: 1200px;
-            margin: 0 auto;
+
+            margin: auto;
 
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
 
             gap: 60px;
         }
 
         .footer-grid h4 {
             color: var(--champagne-gold);
+
             font-family: 'Playfair Display', serif;
+
             font-size: 1.3rem;
+
             margin: 0 0 15px;
         }
 
         .footer-grid p {
-            color: white;
             line-height: 1.7;
+
             margin: 0;
         }
 
         .footer-grid a {
             color: white;
+
             text-decoration: none;
+
             transition: 0.3s ease;
         }
 
@@ -505,7 +377,9 @@
 
         .footer-bottom {
             max-width: 1200px;
+
             margin: 40px auto 0;
+
             padding-top: 20px;
 
             border-top:
@@ -513,6 +387,7 @@
                 rgba(239,191,95,0.5);
 
             text-align: center;
+
             font-size: 0.85rem;
         }
 
@@ -528,54 +403,63 @@
                 gap: 15px;
             }
 
-            .logo-container img {
-                height: 60px;
-            }
-
             nav ul {
                 gap: 18px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
 
-            nav a {
-                font-size: 0.75rem;
-            }
-
-            .gallery-hero h1 {
+            .page-intro h1 {
                 font-size: 3rem;
             }
 
-            .gallery-hero {
-                min-height: 45vh;
+            .performance,
+            .performance:nth-child(even) {
+
+                display: flex;
+
+                flex-direction: column;
+
+                gap: 30px;
+
+                margin-bottom: 70px;
             }
 
-            .featured-box {
-                height: 400px;
+            .performance-video {
+
+                height: 450px;
+
+                width: 100%;
             }
 
-            .featured-overlay {
-                padding: 80px 25px 30px;
+            .performance-info {
+
+                padding: 0;
+
             }
 
-            .featured-overlay h2 {
-                font-size: 2rem;
+            .performance:nth-child(even)
+            .performance-video {
+
+                order: 1;
+
             }
 
-            .photo-grid {
-                grid-template-columns: 1fr;
-            }
+            .performance:nth-child(even)
+            .performance-info {
 
-            .photo-card,
-            .photo-card.large {
-                height: 350px;
-                grid-row: auto;
+                order: 2;
+
             }
 
             .footer-grid {
+
                 grid-template-columns: 1fr;
+
                 text-align: center;
+
                 gap: 30px;
+
             }
 
         }
@@ -588,471 +472,554 @@
 <body>
 
 
-    <!-- =====================================================
-         NAVIGATION
-         ===================================================== -->
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
 
-    <header>
+<header>
 
-        <div class="logo-container">
+    <div class="logo-container">
 
-            <img
-                src="Logo Tapatio.jpg"
-                alt="Grupo Tapatio Folklore Logo">
+        <img
+            src="Logo Tapatio.jpg"
+            alt="Grupo Tapatio Folklore Logo">
 
-        </div>
-
-
-        <nav>
-
-            <ul>
-
-                <li>
-                    <a href="index.html">
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="about.html">
-                        About Us
-                    </a>
-                </li>
-
-                <li>
-                    <a href="gallery.html">
-                        Gallery
-                    </a>
-                </li>
-
-                <li>
-                    <a href="contact.html">
-                        Contact
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-    </header>
+    </div>
 
 
-    <!-- =====================================================
-         GALLERY HERO
-         ===================================================== -->
+    <nav>
 
-    <section class="gallery-hero">
+        <ul>
 
-        <div class="gallery-hero-content">
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
 
-            <h1>
-                Our Performances
-            </h1>
+            <li>
+                <a href="about.html">
+                    About Us
+                </a>
+            </li>
 
-            <p>
-                Every step tells a story. Explore the moments,
-                celebrations, and stages where Grupo Tapatio
-                brings the traditions of Mexico to life.
-            </p>
+            <li>
+                <a href="gallery.html">
+                    Gallery
+                </a>
+            </li>
 
-        </div>
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
 
-    </section>
+        </ul>
 
+    </nav>
 
-    <!-- =====================================================
-         INTRODUCTION
-         ===================================================== -->
-
-    <section class="gallery-intro">
-
-        <h2>
-            More Than a Dance
-        </h2>
-
-        <p>
-            Folklórico is our way of celebrating culture,
-            community, and the generations that came before us.
-            Take a look at some of the performances and
-            experiences that make Grupo Tapatio special.
-        </p>
-
-    </section>
+</header>
 
 
-    <!-- =====================================================
-         FEATURED PERFORMANCE
-         ===================================================== -->
 
-    <section class="featured-performance">
+<!-- =====================================================
+     PAGE INTRO
+     ===================================================== -->
 
-        <div class="featured-box">
+<section class="page-intro">
 
-            <img
-                src="gallery-featured.jpg"
-                alt="Grupo Tapatio featured performance">
+    <h1>
+        Our Performances
+    </h1>
 
-            <div class="featured-overlay">
+    <div class="gold-line"></div>
 
-                <span>
-                    FEATURED PERFORMANCE
-                </span>
+    <p>
 
-                <h2>
-                    Tradition in Motion
-                </h2>
+        Explore the dances and traditions that
+        make Grupo Tapatio Folklore what we are.
+        Every performance is an opportunity to
+        celebrate the culture we love.
 
-                <p>
-                    From rehearsals to the stage, every
-                    performance is an opportunity to share
-                    the beauty of Mexican culture.
-                </p>
+    </p>
 
-            </div>
-
-        </div>
-
-    </section>
+</section>
 
 
-    <!-- =====================================================
-         PERFORMANCE GALLERY
-         ===================================================== -->
 
-    <section class="performance-section">
+<!-- =====================================================
+     PERFORMANCE MENU
+     ===================================================== -->
 
-        <div class="section-title">
+<section class="performance-menu">
+
+
+    <!-- =================================================
+         PERFORMANCE 1
+         VIDEO LEFT / TEXT RIGHT
+         ================================================= -->
+
+    <div class="performance">
+
+        <video
+            class="performance-video"
+            controls
+            poster="performance1.jpg">
+
+            <source
+                src="performance1.mp4"
+                type="video/mp4">
+
+        </video>
+
+
+        <div class="performance-info">
+
+            <span class="performance-number">
+                PERFORMANCE 01
+            </span>
 
             <h2>
-                Moments From the Stage
+                Son de la Negra
             </h2>
 
             <p>
-                A look at some of the places, events,
-                and performances we've been part of.
+
+                One of the most recognizable pieces
+                of Mexican folklórico, this energetic
+                performance celebrates the music,
+                movement, and spirit of Jalisco.
+
+            </p>
+
+
+            <div class="performance-details">
+
+                <p>
+                    <strong>Region:</strong>
+                    Jalisco, Mexico
+                </p>
+
+                <p>
+                    <strong>Style:</strong>
+                    Traditional Folklórico
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PERFORMANCE 2
+         TEXT LEFT / VIDEO RIGHT
+         ================================================= -->
+
+    <div class="performance">
+
+        <video
+            class="performance-video"
+            controls
+            poster="performance2.jpg">
+
+            <source
+                src="performance2.mp4"
+                type="video/mp4">
+
+        </video>
+
+
+        <div class="performance-info">
+
+            <span class="performance-number">
+                PERFORMANCE 02
+            </span>
+
+            <h2>
+                Jalisco
+            </h2>
+
+            <p>
+
+                A celebration of the traditions and
+                lively spirit of Jalisco. Our dancers
+                bring together movement, music,
+                and colorful costumes to create
+                an unforgettable performance.
+
+            </p>
+
+
+            <div class="performance-details">
+
+                <p>
+                    <strong>Region:</strong>
+                    Jalisco, Mexico
+                </p>
+
+                <p>
+                    <strong>Style:</strong>
+                    Regional Folklórico
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PERFORMANCE 3
+         VIDEO LEFT / TEXT RIGHT
+         ================================================= -->
+
+    <div class="performance">
+
+        <video
+            class="performance-video"
+            controls
+            poster="performance3.jpg">
+
+            <source
+                src="performance3.mp4"
+                type="video/mp4">
+
+        </video>
+
+
+        <div class="performance-info">
+
+            <span class="performance-number">
+                PERFORMANCE 03
+            </span>
+
+            <h2>
+                Veracruz
+            </h2>
+
+            <p>
+
+                Experience the vibrant rhythms of
+                Veracruz through movement, music,
+                and traditional choreography.
+
+            </p>
+
+
+            <div class="performance-details">
+
+                <p>
+                    <strong>Region:</strong>
+                    Veracruz, Mexico
+                </p>
+
+                <p>
+                    <strong>Style:</strong>
+                    Regional Folklórico
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PERFORMANCE 4
+         TEXT LEFT / VIDEO RIGHT
+         ================================================= -->
+
+    <div class="performance">
+
+        <video
+            class="performance-video"
+            controls
+            poster="performance4.jpg">
+
+            <source
+                src="performance4.mp4"
+                type="video/mp4">
+
+        </video>
+
+
+        <div class="performance-info">
+
+            <span class="performance-number">
+                PERFORMANCE 04
+            </span>
+
+            <h2>
+                Michoacán
+            </h2>
+
+            <p>
+
+                A beautiful representation of
+                Michoacán's rich cultural traditions
+                through music, movement, and
+                colorful regional costumes.
+
+            </p>
+
+
+            <div class="performance-details">
+
+                <p>
+                    <strong>Region:</strong>
+                    Michoacán, Mexico
+                </p>
+
+                <p>
+                    <strong>Style:</strong>
+                    Traditional Folklórico
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PERFORMANCE 5
+         VIDEO LEFT / TEXT RIGHT
+         ================================================= -->
+
+    <div class="performance">
+
+        <video
+            class="performance-video"
+            controls
+            poster="performance5.jpg">
+
+            <source
+                src="performance5.mp4"
+                type="video/mp4">
+
+        </video>
+
+
+        <div class="performance-info">
+
+            <span class="performance-number">
+                PERFORMANCE 05
+            </span>
+
+            <h2>
+                Nayarit
+            </h2>
+
+            <p>
+
+                A colorful and energetic performance
+                inspired by the traditions of Nayarit
+                and the communities that continue
+                to preserve them.
+
+            </p>
+
+
+            <div class="performance-details">
+
+                <p>
+                    <strong>Region:</strong>
+                    Nayarit, Mexico
+                </p>
+
+                <p>
+                    <strong>Style:</strong>
+                    Regional Folklórico
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PERFORMANCE 6
+         TEXT LEFT / VIDEO RIGHT
+         ================================================= -->
+
+    <div class="performance">
+
+        <video
+            class="performance-video"
+            controls
+            poster="performance6.jpg">
+
+            <source
+                src="performance6.mp4"
+                type="video/mp4">
+
+        </video>
+
+
+        <div class="performance-info">
+
+            <span class="performance-number">
+                PERFORMANCE 06
+            </span>
+
+            <h2>
+                Our Community
+            </h2>
+
+            <p>
+
+                Every performance is more than a dance.
+                It is a chance to bring people together,
+                celebrate our roots, and share Mexican
+                culture with our community.
+
+            </p>
+
+
+            <div class="performance-details">
+
+                <p>
+                    <strong>Performed:</strong>
+                    Community Events
+                </p>
+
+                <p>
+                    <strong>Purpose:</strong>
+                    Culture & Community
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     JOIN US
+     ===================================================== -->
+
+<section class="join-section">
+
+    <h2>
+        Want to Be Part of the Experience?
+    </h2>
+
+    <p>
+
+        Come learn, perform, and grow with Grupo
+        Tapatio Folklore. Whether you're new to
+        folklórico or already have experience,
+        there's a place for you here.
+
+    </p>
+
+
+    <a
+        href="contact.html"
+        class="join-button">
+
+        Join the Experience
+
+    </a>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <h4>
+                Grupo Tapatio Folklore
+            </h4>
+
+            <p>
+
+                Preserving Mexican heritage through
+                authentic Folklórico dance, music,
+                and storytelling.
+
             </p>
 
         </div>
 
 
-        <div class="photo-grid">
+        <div>
 
+            <h4>
+                Contact
+            </h4>
 
-            <!-- LARGE PHOTO -->
+            <p>
 
-            <div class="photo-card large">
+                info@folklorico.com<br>
+                (555) 123-4567
 
-                <img
-                    src="gallery1.jpg"
-                    alt="Grupo Tapatio performance">
-
-                <div class="photo-overlay">
-
-                    <span>
-                        ON STAGE
-                    </span>
-
-                    <h3>
-                        Bringing Tradition to Life
-                    </h3>
-
-                </div>
-
-            </div>
-
-
-            <!-- PHOTO 2 -->
-
-            <div class="photo-card">
-
-                <img
-                    src="gallery2.jpg"
-                    alt="Grupo Tapatio dancers">
-
-                <div class="photo-overlay">
-
-                    <span>
-                        PERFORMANCE
-                    </span>
-
-                    <h3>
-                        The Energy of Folklórico
-                    </h3>
-
-                </div>
-
-            </div>
-
-
-            <!-- PHOTO 3 -->
-
-            <div class="photo-card">
-
-                <img
-                    src="gallery3.jpg"
-                    alt="Grupo Tapatio dancers">
-
-                <div class="photo-overlay">
-
-                    <span>
-                        COMMUNITY
-                    </span>
-
-                    <h3>
-                        Sharing Our Culture
-                    </h3>
-
-                </div>
-
-            </div>
-
-
-            <!-- PHOTO 4 -->
-
-            <div class="photo-card">
-
-                <img
-                    src="gallery4.jpg"
-                    alt="Grupo Tapatio performance">
-
-                <div class="photo-overlay">
-
-                    <span>
-                        FOLKLÓRICO
-                    </span>
-
-                    <h3>
-                        Movement & Tradition
-                    </h3>
-
-                </div>
-
-            </div>
-
-
-            <!-- PHOTO 5 -->
-
-            <div class="photo-card">
-
-                <img
-                    src="gallery5.jpg"
-                    alt="Grupo Tapatio performance">
-
-                <div class="photo-overlay">
-
-                    <span>
-                        CELEBRATION
-                    </span>
-
-                    <h3>
-                        Dancing Together
-                    </h3>
-
-                </div>
-
-            </div>
-
-
-            <!-- PHOTO 6 -->
-
-            <div class="photo-card">
-
-                <img
-                    src="gallery6.jpg"
-                    alt="Grupo Tapatio dancers">
-
-                <div class="photo-overlay">
-
-                    <span>
-                        OUR GROUP
-                    </span>
-
-                    <h3>
-                        One Team, One Tradition
-                    </h3>
-
-                </div>
-
-            </div>
-
-
-            <!-- PHOTO 7 -->
-
-            <div class="photo-card">
-
-                <img
-                    src="gallery7.jpg"
-                    alt="Grupo Tapatio performance">
-
-                <div class="photo-overlay">
-
-                    <span>
-                        PERFORMANCE
-                    </span>
-
-                    <h3>
-                        The Stage Is Ours
-                    </h3>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         EVENTS
-         ===================================================== -->
-
-    <section class="events-section">
-
-        <h2>
-            Where We Perform
-        </h2>
-
-        <p>
-            Our dancers have the opportunity to share
-            Folklórico at many different types of events
-            and celebrations throughout our community.
-        </p>
-
-
-        <div class="event-tags">
-
-            <span class="event-tag">
-                Festivals
-            </span>
-
-            <span class="event-tag">
-                Cultural Events
-            </span>
-
-            <span class="event-tag">
-                Community Celebrations
-            </span>
-
-            <span class="event-tag">
-                Weddings
-            </span>
-
-            <span class="event-tag">
-                Private Events
-            </span>
-
-            <span class="event-tag">
-                Special Performances
-            </span>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         JOIN US
-         ===================================================== -->
-
-    <section class="join-section">
-
-        <h2>
-            Ready to Be Part of It?
-        </h2>
-
-        <p>
-            Watching the performances is only the beginning.
-            Join Grupo Tapatio and learn traditional
-            Folklórico while performing, building friendships,
-            and representing the culture we love.
-        </p>
-
-
-        <a
-            href="contact.html"
-            class="join-button">
-
-            Join the Experience
-
-        </a>
-
-    </section>
-
-
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
-
-    <footer>
-
-        <div class="footer-grid">
-
-
-            <div>
-
-                <h4>
-                    Grupo Tapatio Folklore
-                </h4>
-
-                <p>
-                    Preserving Mexican heritage through
-                    authentic Folklórico dance, music,
-                    and storytelling.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <h4>
-                    Contact
-                </h4>
-
-                <p>
-                    info@folklorico.com<br>
-                    (555) 123-4567
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <h4>
-                    Follow Us
-                </h4>
-
-                <p>
-
-                    <a href="#">
-                        Instagram
-                    </a>
-
-                    &nbsp; | &nbsp;
-
-                    <a href="#">
-                        Facebook
-                    </a>
-
-                </p>
-
-            </div>
-
+            </p>
 
         </div>
 
 
-        <div class="footer-bottom">
+        <div>
 
-            © 2026 Grupo Tapatio Folklore. All rights reserved.
+            <h4>
+                Follow Us
+            </h4>
+
+            <p>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                &nbsp; | &nbsp;
+
+                <a href="#">
+                    Facebook
+                </a>
+
+            </p>
 
         </div>
 
-    </footer>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Grupo Tapatio Folklore.
+        All rights reserved.
+
+    </div>
+
+</footer>
 
 
 </body>
